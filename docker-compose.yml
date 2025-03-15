@@ -1,0 +1,49 @@
+﻿services:
+  web:
+    build:
+      context: ./notey-frontend
+    image: notey/frontend:latest
+    container_name: "notey-web"
+    ports:
+      - "8080:80"
+    networks:
+      - base
+
+  db:
+    container_name: "notey-db"
+    restart: always
+    image: postgres:latest
+    ports:
+      - "4000:5432"
+    environment:
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: password
+      POSTGRES_DB: notey
+    healthcheck:
+      test: ["CMD", "pg_isready", "-U", "postgres"]
+      interval: 5s
+      retries: 5
+      start_period: 10s
+      timeout: 5s
+    networks:
+      - base
+
+  api:
+    container_name: "notey-api"
+    build:
+      context: ./notey-api
+    image: notey/api:latest
+    ports:
+      - "4444:4444"
+    environment:
+      DB_HOST: db
+      DB_NAME: notey
+    depends_on:
+      db:
+        condition: service_healthy
+    networks:
+      - base
+
+networks:
+  base:
+    driver: bridge
