@@ -1,0 +1,6 @@
+[submodule "notey-frontend"]
+	path = notey-frontend
+	url = https://github.com/bernardawj/notey-frontend
+[submodule "notey-api"]
+	path = notey-api
+	url = https://github.com/bernardawj/notey-api
