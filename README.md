@@ -15,8 +15,19 @@ The purpose of this project is to showcase and apply what I have learned through
 ## How to run?
 1. Install Docker
 2. Change directory to the root of this repository folder
-3. Execute these commands
+
+`Initial Build`
 ```shell
 docker compose build
 docker compose up
+```
+
+`Start`
+```shell
+docker compose start
+```
+
+`Stop`
+```shell
+docker compose stop
 ```
