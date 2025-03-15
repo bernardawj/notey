@@ -15,8 +15,9 @@ The purpose of this project is to showcase and apply what I have learned through
 ## How to run?
 1. Install Docker
 2. Change directory to the root of this repository folder
+3. Run either of these steps based on circumstance
 
-`Initial Build`
+`Initial Build and Run`
 ```shell
 docker compose build
 docker compose up
@@ -31,3 +32,5 @@ docker compose start
 ```shell
 docker compose stop
 ```
+
+4. Access http://localhost:8080
