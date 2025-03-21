@@ -19,7 +19,13 @@ The purpose of this project is to showcase and apply what I have learned through
 
 `Initial Build and Run`
 ```shell
+# If you are in intel-based architecture
 docker compose build
+
+# If you are in arm-based architecture
+IMAGE_ARCH=arm64 docker compose build
+
+# Run the containers
 docker compose up
 ```
 
