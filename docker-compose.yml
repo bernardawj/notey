@@ -38,6 +38,8 @@
     environment:
       DB_HOST: db
       DB_NAME: notey
+      DB_USERNAME: postgres
+      DB_PASSWORD: password
     depends_on:
       db:
         condition: service_healthy
